@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="#006D97">
+    android:background="@drawable/rounder">
 
     <ImageView
         android:id="@+id/image_cat"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_margin="10dp"
         android:layout_marginStart="10dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"

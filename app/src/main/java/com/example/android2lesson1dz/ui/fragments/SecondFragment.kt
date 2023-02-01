@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android2lesson1dz.databinding.FragmentSecondBinding
 import com.example.android2lesson1dz.ui.adapters.SecondAdapter
-import com.example.android2lesson1dz.ui.data.Model
-import com.example.android2lesson1dz.ui.repository.SecondRepository
+import com.example.android2lesson1dz.data.GeneralModel
+import com.example.android2lesson1dz.data.repository.SecondRepository
 
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
-    private var listCat = mutableListOf<Model>()
+    private var listCat = mutableListOf<GeneralModel>()
     private val repository = SecondRepository()
     private val catAdapter = SecondAdapter(listCat)
 

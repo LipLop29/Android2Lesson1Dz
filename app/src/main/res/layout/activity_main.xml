@@ -20,7 +20,7 @@
         android:id="@+id/btn_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="#2B2B2B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_items" />
 </androidx.constraintlayout.widget.ConstraintLayout>

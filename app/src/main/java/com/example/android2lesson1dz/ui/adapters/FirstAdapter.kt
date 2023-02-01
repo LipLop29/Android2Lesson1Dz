@@ -6,16 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android2lesson1dz.databinding.ItemFirstBinding
 import com.example.android2lesson1dz.ui.iterface.OnItemTextListener
-import com.example.android2lesson1dz.ui.data.Model
+import com.example.android2lesson1dz.data.GeneralModel
 
 class FirstAdapter(
-    private var listCat: MutableList<Model>,
+    private var listCat: MutableList<GeneralModel>,
     private val onItemTextListener: OnItemTextListener
 ) : RecyclerView.Adapter<FirstAdapter.FirstViewHolder>() {
 
-    inner class FirstViewHolder(private var binding: ItemFirstBinding) :
+    inner class FirstViewHolder(private var binding:ItemFirstBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(catModel: Model) {
+
+        fun onBind(catModel: GeneralModel) {
             binding.txtName.text = catModel.name
             Glide.with(binding.imageCat.context).load(catModel.image).into(binding.imageCat)
             itemView.setOnClickListener {
@@ -40,5 +41,4 @@ class FirstAdapter(
     }
 
     override fun getItemCount(): Int = listCat.size
-
 }

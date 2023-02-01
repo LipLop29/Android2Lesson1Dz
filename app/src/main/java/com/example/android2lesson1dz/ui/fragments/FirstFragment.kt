@@ -12,15 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android2lesson1dz.databinding.FragmentFirstBinding
 import com.example.android2lesson1dz.ui.iterface.OnItemTextListener
 import com.example.android2lesson1dz.ui.adapters.FirstAdapter
-import com.example.android2lesson1dz.ui.data.Model
-import com.example.android2lesson1dz.ui.repository.FirstRepository
+import com.example.android2lesson1dz.data.GeneralModel
+import com.example.android2lesson1dz.data.repository.FirstRepository
 
 class FirstFragment : Fragment(), OnItemTextListener {
+
     private lateinit var binding: FragmentFirstBinding
-    private var listCat = mutableListOf<Model>()
+    private var listCat = mutableListOf<GeneralModel>()
     private val repository = FirstRepository()
     private val catAdapter = FirstAdapter(listCat, this)
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,11 +31,11 @@ class FirstFragment : Fragment(), OnItemTextListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dub()
+        duplicationRemoval()
         initialization()
     }
 
-    private fun dub() {
+    private fun duplicationRemoval() {
         listCat.clear()
     }
 
@@ -46,7 +46,7 @@ class FirstFragment : Fragment(), OnItemTextListener {
         binding.recycler.adapter = catAdapter
     }
 
-    override fun onItemClick(model: Model) = with(binding) {
+    override fun onItemClick(model: GeneralModel) = with(binding) {
         val action: NavDirections =
             FirstFragmentDirections.actionFirstFragmentToDetailFirstFragment(
                 model.name.toString(),

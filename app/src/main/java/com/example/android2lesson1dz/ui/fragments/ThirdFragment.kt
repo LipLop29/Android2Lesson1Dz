@@ -9,12 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android2lesson1dz.databinding.FragmentThirdBinding
 import com.example.android2lesson1dz.ui.adapters.ThirdAdapter
-import com.example.android2lesson1dz.ui.data.Model
-import com.example.android2lesson1dz.ui.repository.ThirdRepository
+import com.example.android2lesson1dz.data.GeneralModel
+import com.example.android2lesson1dz.data.repository.ThirdRepository
 
 class ThirdFragment : Fragment() {
+
     private lateinit var binding: FragmentThirdBinding
-    private var listCat = mutableListOf<Model>()
+    private var listCat = mutableListOf<GeneralModel>()
     private val repository = ThirdRepository()
     private val catAdapter = ThirdAdapter(listCat)
 
