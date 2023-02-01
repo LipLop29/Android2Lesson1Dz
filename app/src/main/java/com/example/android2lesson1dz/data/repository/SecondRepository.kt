@@ -15,13 +15,15 @@ class SecondRepository {
         )
         catModelList.add(
             GeneralModel(
-                "https://amc-theatres-res.cloudinary.com/v1664804476/amc-cdn/production/2/movies/56500/56467/PosterDynamic/143958.jpg",
+                "https://amc-theatres-res.cloudinary.com/v1664804476/" +
+                        "amc-cdn/production/2/movies/56500/56467/PosterDynamic/143958.jpg",
                 "Wakanda forever"
             )
         )
         catModelList.add(
             GeneralModel(
-                "https://lumiere-a.akamaihd.net/v1/images/p_shangchiandthelegendofthetenringshomeentupdate_22055_7b62fa67.jpeg?region=0%2C0%2C540%2C800",
+                "https://lumiere-a.akamaihd.net/v1/images/p_shangchiandthelegendofthetenr" +
+                        "ingshomeentupdate_22055_7b62fa67.jpeg?region=0%2C0%2C540%2C800",
                 "Shang Chi"
             )
         )
