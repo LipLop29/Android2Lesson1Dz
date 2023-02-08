@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android2lesson1dz.R
 import com.example.android2lesson1dz.databinding.FragmentFirstBinding
 import com.example.android2lesson1dz.ui.iterface.OnItemTextListener
 import com.example.android2lesson1dz.ui.adapters.FirstAdapter
@@ -21,6 +23,8 @@ class FirstFragment : Fragment(), OnItemTextListener {
     private var listCat = mutableListOf<GeneralModel>()
     private val repository = FirstRepository()
     private val catAdapter = FirstAdapter(listCat, this)
+    private val args by navArgs<FirstFragmentArgs>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +37,14 @@ class FirstFragment : Fragment(), OnItemTextListener {
         super.onViewCreated(view, savedInstanceState)
         duplicationRemoval()
         initialization()
+        setupListener()
+        getData()
+    }
+
+    private fun setupListener() {
+        binding.btnAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_firstFragment_to_addFirstFragment)
+        }
     }
 
     private fun duplicationRemoval() {
@@ -44,6 +56,12 @@ class FirstFragment : Fragment(), OnItemTextListener {
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         listCat.addAll(repository.getListOfCatHTP())
         binding.recycler.adapter = catAdapter
+    }
+
+    private fun getData() {
+        if (args.textseri.isNotEmpty()) {
+            listCat.add(GeneralModel("", args.textseri))
+        }
     }
 
     override fun onItemClick(model: GeneralModel) = with(binding) {

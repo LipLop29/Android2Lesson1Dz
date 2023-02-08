@@ -10,8 +10,10 @@ import com.bumptech.glide.Glide
 import com.example.android2lesson1dz.databinding.FragmentDetailFirstBinding
 
 class DetailFirstFragment : Fragment() {
+
     private lateinit var binding: FragmentDetailFirstBinding
     private val args by navArgs<DetailFirstFragmentArgs>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

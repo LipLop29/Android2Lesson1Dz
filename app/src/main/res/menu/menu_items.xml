@@ -5,10 +5,12 @@
         android:id="@+id/firstFragment"
         android:icon="@drawable/cat"
         tools:ignore="MenuTitle" />
+
     <item
         android:id="@+id/secondFragment"
         android:icon="@drawable/mov"
         tools:ignore="MenuTitle" />
+
     <item
         android:id="@+id/thirdFragment"
         android:icon="@drawable/java"

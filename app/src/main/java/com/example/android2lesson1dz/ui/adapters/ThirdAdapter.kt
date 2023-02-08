@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.android2lesson1dz.databinding.ItemThirdBinding
 import com.example.android2lesson1dz.data.GeneralModel
+import com.example.android2lesson1dz.databinding.ItemFirstBinding
 
 class ThirdAdapter(
     private var listCat: MutableList<GeneralModel>,
 ) : RecyclerView.Adapter<ThirdAdapter.ThirdViewHolder>() {
 
-    class ThirdViewHolder(private var binding: ItemThirdBinding) :
+    class ThirdViewHolder(private var binding: ItemFirstBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(programModel: GeneralModel) {
@@ -22,7 +22,7 @@ class ThirdAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThirdViewHolder {
         return ThirdViewHolder(
-            ItemThirdBinding.inflate(
+            ItemFirstBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false

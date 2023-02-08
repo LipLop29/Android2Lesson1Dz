@@ -13,7 +13,7 @@ class FirstAdapter(
     private val onItemTextListener: OnItemTextListener
 ) : RecyclerView.Adapter<FirstAdapter.FirstViewHolder>() {
 
-    inner class FirstViewHolder(private var binding: ItemFirstBinding) :
+    inner class FirstViewHolder(private var binding:ItemFirstBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(catModel: GeneralModel) {
