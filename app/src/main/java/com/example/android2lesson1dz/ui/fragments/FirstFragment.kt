@@ -35,7 +35,6 @@ class FirstFragment : Fragment(), OnItemTextListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        duplicationRemoval()
         initialization()
         setupListener()
         getData()
@@ -45,10 +44,6 @@ class FirstFragment : Fragment(), OnItemTextListener {
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_firstFragment_to_addFirstFragment)
         }
-    }
-
-    private fun duplicationRemoval() {
-        listCat.clear()
     }
 
     private fun initialization() {
@@ -71,5 +66,10 @@ class FirstFragment : Fragment(), OnItemTextListener {
                 model.image.toString()
             )
         findNavController().navigate(action)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        listCat.clear()
     }
 }

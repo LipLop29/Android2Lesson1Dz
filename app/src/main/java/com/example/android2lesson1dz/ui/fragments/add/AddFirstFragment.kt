@@ -23,10 +23,10 @@ class AddFirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        click()
+        setupListener()
     }
 
-    private fun click() {
+    private fun setupListener() {
         binding?.btnAddItem?.setOnClickListener {
             val text = binding?.etText?.text.toString()
             val action: NavDirections =
